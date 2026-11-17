@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClipGenerator — AI-Powered Video Clip Generator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>" />
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="container">
+        <a href="/" class="header-logo">
+          <div class="logo-icon">🎬</div>
+          <span class="app-title">ClipGenerator</span>
+        </a>
+        <span class="app-subtitle">AI Video Repurposing • 100% Free</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <div class="container">
+        <!-- Hero section -->
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px; background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Turn Long Videos Into Viral Social Clips
+          </h1>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+            Upload podcasts, talks, or educational videos. Our AI automatically discovers the most striking moments, trims them, and burns engaging word subtitles.
+          </p>
+        </div>
+
+        <!-- Upload Card -->
+        <section class="upload-card">
+          <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop video file or click to browse">
+            <input type="file" id="file-input" accept="video/mp4,video/quicktime,video/x-matroska,video/webm,video/x-msvideo,.mp4,.mov,.mkv,.webm,.avi" />
+            <div class="drop-icon">📹</div>
+            <div class="drop-label">Drag & drop a video file here, or click Browse</div>
+            <div class="drop-hint">Supports MP4, MOV, MKV, WebM, AVI (up to 2 GB)</div>
+            <div class="drop-formats">
+              <span class="format-badge">MP4</span>
+              <span class="format-badge">MOV</span>
+              <span class="format-badge">MKV</span>
+              <span class="format-badge">WEBM</span>
+            </div>
+          </div>
+
+          <div class="upload-actions">
+            <button type="button" id="browse-btn" class="btn btn-secondary">
+              📁 Choose File
+            </button>
+            <button type="button" id="upload-btn" class="btn btn-primary" disabled>
+              ⚡ Generate Viral Clips
+            </button>
+          </div>
+
+          <!-- Upload Progress -->
+          <div id="progress-section" class="upload-progress-wrap" style="display: none;">
+            <div class="progress-label">
+              <span id="progress-text">Uploading…</span>
+            </div>
+            <div class="progress-bar-outer">
+              <div id="progress-bar" class="progress-bar-inner"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Current Job Status Card -->
+        <section id="status-section" class="job-status-card">
+          <div class="job-status-header">
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Current Task</div>
+              <div id="current-job-file" style="font-weight: 600; font-size: 1rem; color: var(--text-primary);"></div>
+            </div>
+            <div id="current-job-status" class="job-status-badge status-queued">Queued</div>
+          </div>
+        </section>
+
+        <!-- Clips Gallery -->
+        <section id="clips-section" style="display: none; margin-bottom: 48px;">
+          <h2 class="section-title">
+            <span>Generated Clips</span>
+          </h2>
+          <div id="clips-grid" class="clips-grid">
+            <!-- Dynamic clip cards rendered by app.js -->
+          </div>
+        </section>
+
+        <!-- Job History Sidebar / List -->
+        <section id="job-list-section" style="display: none; margin-top: 36px;">
+          <h2 class="section-title">
+            <span>Recent Jobs</span>
+          </h2>
+          <ul id="job-list" class="job-list">
+            <!-- List items populated by app.js -->
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

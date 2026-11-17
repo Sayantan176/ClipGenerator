@@ -1,0 +1,79 @@
+# ============================================================
+#  ClipGenerator — Git Ignore Rules
+# ============================================================
+
+# Environment variables & API credentials (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+credentials.txt
+*.key
+*.pem
+
+# User uploads & generated video clips
+uploads/*
+!uploads/.gitkeep
+outputs/*
+!outputs/.gitkeep
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.m4v
+*.flv
+*.wmv
+*.mp3
+*.wav
+*.aac
+*.srt
+*.ass
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+clipgenerator.db
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+conda-env/
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Celery & background tasks
+celerybeat-schedule
+celerybeat.pid
+
+# Logs
+logs/
+*.log
